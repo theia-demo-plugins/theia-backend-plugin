@@ -10,8 +10,11 @@
   },
   "author": "Oleksii Kurinnyi <okurinny@redhat.com>",
   "license": "EPL-1.0",
+  "engines": {
+    "theiaPlugin": "latest"
+  },
   "theiaPlugin": {
-    "node": "dist/index.js"
+    "backend": "dist/index.js"
   },
   "devDependencies": {
     "@wiptheia/plugin": "latest",

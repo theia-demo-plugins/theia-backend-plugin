@@ -13,7 +13,7 @@ import * as theia from '@wiptheia/plugin';
 import * as _ from 'lodash';
 const disposables: theia.Disposable[] = [];
 
-export function doStartThings() {
+export function start() {
     const command: theia.Command = {
         id: 'simple-plugin-command',
         label: 'Command from simple server plugin'
@@ -29,7 +29,7 @@ export function doStartThings() {
     );
 }
 
-export function doStopThings() {
+export function stop() {
     while (disposables.length) {
         const disposable = disposables.pop();
         disposable.dispose();
