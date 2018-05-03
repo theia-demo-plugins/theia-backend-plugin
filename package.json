@@ -1,6 +1,6 @@
 {
-  "publisher": "redhat",
   "name": "@wiptheia/theia-backend-plugin",
+  "publisher": "theia",
   "version": "0.0.1",
   "description": "",
   "main": "dist/bundle.js",
