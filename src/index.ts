@@ -27,6 +27,57 @@ export function start() {
             }
         })
     );
+
+    const informationMessageTestCommand = {
+        id: 'backend-plugin-information-message-command',
+        label: "Test Information Message Server Plugin Item"
+    };
+    disposables.push(theia.commands.registerCommand(informationMessageTestCommand, (...args: any[]) => {
+        theia.window.showInformationMessage('Information message!');
+    }));
+
+    const informationModalMessageTestCommand = {
+        id: 'backend-plugin-information-modal-message-command',
+        label: "Test Information Modal Message Server Plugin Item"
+    };
+    disposables.push(theia.commands.registerCommand(informationModalMessageTestCommand, (...args: any[]) => {
+        theia.window.showInformationMessage('Information modal message!', {modal: true}, {title: 'action1'},
+            {title: 'action2', isCloseAffordance: true}, {title: 'action3'}).then(action => {
+            console.log('>>> resolve', action);
+        });
+    }));
+
+    const warningMessageTestCommand = {
+        id: 'backend-plugin-warning-message-command',
+        label: "Test Warning Message Server Plugin Item"
+    };
+    disposables.push(theia.commands.registerCommand(warningMessageTestCommand, (...args: any[]) => {
+        theia.window.showWarningMessage('Warning message!');
+    }));
+
+    const warningModalMessageTestCommand = {
+        id: 'backend-plugin-warning-modal-message-command',
+        label: "Test Warning Modal Message Server Plugin Item"
+    };
+    disposables.push(theia.commands.registerCommand(warningModalMessageTestCommand, (...args: any[]) => {
+        theia.window.showWarningMessage('Warning modal message!', {modal: true});
+    }));
+
+    const errorMessageTestCommand = {
+        id: 'backend-plugin-error-message-command',
+        label: "Test Error Message Server Plugin Item"
+    };
+    disposables.push(theia.commands.registerCommand(errorMessageTestCommand, (...args: any[]) => {
+        theia.window.showErrorMessage('Error message!');
+    }));
+
+    const errorModalMessageTestCommand = {
+        id: 'backend-plugin-error-modal-message-command',
+        label: "Test Error Modal Message Server Plugin Item"
+    };
+    disposables.push(theia.commands.registerCommand(errorModalMessageTestCommand, (...args: any[]) => {
+        theia.window.showErrorMessage('Error modal message!', {modal: true});
+    }));
 }
 
 export function stop() {
