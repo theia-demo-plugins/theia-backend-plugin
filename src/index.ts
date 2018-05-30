@@ -9,8 +9,7 @@
  *   Red Hat, Inc. - initial API and implementation
  */
 
-import * as theia from '@theia/plugin';
-import * as _ from 'lodash';
+import * as theia from '@wiptheia/plugin';
 const disposables: theia.Disposable[] = [];
 
 export namespace Commands {
@@ -79,8 +78,8 @@ export namespace Commands {
         label: "Dispose terminal after 3 sec Server plugin"
     }
 
-    export const SibscribeToOnDidCloseTeminalEvent: theia.Command = {
-        id: "backend-plugin-subscibe-on-did-close-terminal-event",
+    export const SubscribeToOnDidCloseTerminalEvent: theia.Command = {
+        id: "backend-plugin-subscribe-on-did-close-terminal-event",
         label: "Subscribe to onDidCloseTerminal event Server plugin"
     }
 }
@@ -90,10 +89,6 @@ export function start() {
     disposables.push(
         theia.commands.registerCommand(Commands.SimpleCommand, (...args: any[]) => {
             console.log(`>>> Simple plugin command handler was called with arguments: `, args);
-
-            if (typeof (_ as any).all === 'function') {
-                console.log('>>> Lodash v3 is present');
-            }
         })
     );
 
@@ -172,7 +167,7 @@ export function start() {
         }, 3000);
     }));
 
-    disposables.push(theia.commands.registerCommand(Commands.SibscribeToOnDidCloseTeminalEvent, () => {
+    disposables.push(theia.commands.registerCommand(Commands.SubscribeToOnDidCloseTerminalEvent, () => {
         const terminal = createTerminalWithOptions();
         terminal.show();
         terminal.processId.then(id => {

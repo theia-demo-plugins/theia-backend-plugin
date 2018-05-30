@@ -19,8 +19,7 @@
   },
   "devDependencies": {
     "@wiptheia/plugin-package": "latest",
-    "@theia/plugin": "/home/user/projects/wiptheia/packages/plugin",
-    "@types/lodash": "^4.14.105",
+    "@wiptheia/plugin": "latest",
     "typescript": "^2.7.2"
   },
   "dependencies": {
