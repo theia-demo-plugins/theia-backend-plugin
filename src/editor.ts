@@ -27,7 +27,7 @@ export function initEditorsCommands() {
 
     theia.window.onDidChangeActiveTextEditor( e =>{
         if(e){
-                    console.log(`Active Editor Changed: ${e.document.uri}`);
+            console.log(`Active Editor Changed: ${e.document.uri}`);
         } else {
             console.log("All editors are closed");
         }
