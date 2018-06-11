@@ -11,9 +11,11 @@
 
 import * as theia from '@wiptheia/plugin';
 import * as _ from 'lodash';
+import {initEditorsCommands} from './editor';
 const disposables: theia.Disposable[] = [];
 
 export function start() {
+    initEditorsCommands();
     const command: theia.Command = {
         id: 'simple-plugin-command',
         label: 'Command from simple server plugin'
