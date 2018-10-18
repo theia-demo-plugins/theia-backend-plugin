@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@wiptheia/plugin-package": "latest",
-    "@wiptheia/plugin": "latest",
+    "@theia/plugin": "next",
     "typescript": "^2.7.2"
   },
   "dependencies": {

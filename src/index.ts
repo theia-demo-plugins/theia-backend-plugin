@@ -9,7 +9,8 @@
  *   Red Hat, Inc. - initial API and implementation
  */
 
-import * as theia from '@wiptheia/plugin';
+import * as theia from '@theia/plugin';
+import {initEditorsCommands} from './editor';
 const disposables: theia.Disposable[] = [];
 
 export namespace Commands {
@@ -85,6 +86,7 @@ export namespace Commands {
 }
 
 export function start() {
+    initEditorsCommands();
     /*----------------- Command api ------------------*/
     disposables.push(
         theia.commands.registerCommand(Commands.SimpleCommand, (...args: any[]) => {
